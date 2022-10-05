@@ -17,8 +17,12 @@ pub struct AuthorizeMintCtx<'info> {
     )]
     stake_authorization_record: Account<'info, StakeAuthorizationRecord>,
 
-    #[account(mut, constraint = payer.key() == stake_pool.authority @ ErrorCode::InvalidPoolAuthority)]
+    #[account(mut)]
     payer: Signer<'info>,
+
+    #[account(mut, constraint = authority.key() == stake_pool.authority @ ErrorCode::InvalidPoolAuthority)]
+    authority: Signer<'info>,
+
     system_program: Program<'info, System>,
 }
 

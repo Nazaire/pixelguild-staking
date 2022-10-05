@@ -1,5 +1,5 @@
 {
-  "name": "@cardinal/staking",
+  "name": "@nazaire/cardinal-staking",
   "version": "1.10.2",
   "description": "Cardinal stake pool SDK",
   "keywords": [
@@ -9,7 +9,7 @@
   ],
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "repository": "git@github.com:cardinal-labs/cardinal-stake-pool.git",
+  "repository": "https://github.com/Nazaire/cardinal-staking.git",
   "author": "Giannis Chatziveroglou <giannis@cardinal.so>",
   "bugs": {
     "url": "https://github.com/cardinal-labs/cardinal-stake-pool/issues",
@@ -26,7 +26,8 @@
     "@types/bn.js": "^5.1.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "files": [
     "dist/",

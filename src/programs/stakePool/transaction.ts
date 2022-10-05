@@ -168,12 +168,16 @@ export const withAuthorizeStakeEntry = async (
   params: {
     stakePoolId: web3.PublicKey;
     originalMintId: web3.PublicKey;
+    payer: web3.PublicKey;
+    authority: web3.PublicKey;
   }
 ): Promise<web3.Transaction> => {
   transaction.add(
     await authorizeStakeEntry(connection, wallet, {
       stakePoolId: params.stakePoolId,
       originalMintId: params.originalMintId,
+      payer: params.payer,
+      authority: params.authority,
     })
   );
   return transaction;

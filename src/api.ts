@@ -209,11 +209,15 @@ export const authorizeStakeEntry = async (
   params: {
     stakePoolId: PublicKey;
     originalMintId: PublicKey;
+    payer?: PublicKey;
+    authority?: PublicKey;
   }
 ): Promise<Transaction> => {
   return withAuthorizeStakeEntry(new Transaction(), connection, wallet, {
     stakePoolId: params.stakePoolId,
     originalMintId: params.originalMintId,
+    payer: params.payer || wallet.publicKey,
+    authority: params.authority || wallet.publicKey,
   });
 };
 

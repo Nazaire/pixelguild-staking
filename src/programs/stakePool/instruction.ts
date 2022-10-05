@@ -2,7 +2,6 @@ import { findAta } from "@cardinal/common";
 import {
   CRANK_KEY,
   getRemainingAccountsForKind,
-  TOKEN_MANAGER_ADDRESS,
   TokenManagerKind,
   TokenManagerState,
 } from "@cardinal/token-manager/dist/cjs/programs/tokenManager";
@@ -26,6 +25,7 @@ import type {
 } from "@solana/web3.js";
 import { SystemProgram, SYSVAR_RENT_PUBKEY } from "@solana/web3.js";
 
+import { TOKEN_MANAGER_ADDRESS } from "../../constants";
 import type { STAKE_POOL_PROGRAM } from ".";
 import { STAKE_POOL_ADDRESS, STAKE_POOL_IDL } from ".";
 import { ReceiptType } from "./constants";
@@ -108,6 +108,8 @@ export const authorizeStakeEntry = async (
   params: {
     stakePoolId: PublicKey;
     originalMintId: PublicKey;
+    authority: PublicKey;
+    payer: PublicKey;
   }
 ): Promise<TransactionInstruction> => {
   const provider = new AnchorProvider(connection, wallet, {});
@@ -125,7 +127,8 @@ export const authorizeStakeEntry = async (
     accounts: {
       stakePool: params.stakePoolId,
       stakeAuthorizationRecord: stakeAuthorizationId,
-      payer: wallet.publicKey,
+      payer: params.payer,
+      authority: params.authority,
       systemProgram: SystemProgram.programId,
     },
   });
