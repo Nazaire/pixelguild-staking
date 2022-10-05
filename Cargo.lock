@@ -437,9 +437,7 @@ dependencies = [
 
 [[package]]
 name = "cardinal-token-manager"
-version = "1.5.20"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f5c282406caf652b3b3a15ab44a21a7794e155eb0e40c5c9ec92c77c77307899"
+version = "1.6.0"
 dependencies = [
  "anchor-lang",
  "anchor-spl",

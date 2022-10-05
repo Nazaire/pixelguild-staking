@@ -4,9 +4,14 @@ solana_version = "1.9.13"
 [scripts]
 test = "yarn mocha tests/*.spec.ts"
 
+# [provider]
+# cluster = "localnet"
+# wallet = "./tests/test-key.json"
+
 [provider]
-cluster = "localnet"
-wallet = "./tests/test-key.json"
+cluster = "devnet"
+wallet = "./local/keys/authority_8EAcZrXUaJZoByMHBC3Kh913hizxJAJkjX3NsLx1g9Ft.json"
+
 
 [programs.mainnet]
 cardinal_stake_pool = "CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe"
