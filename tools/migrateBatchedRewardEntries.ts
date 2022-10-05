@@ -15,7 +15,7 @@ import { getAllStakeEntries } from "../src/programs/stakePool/accounts";
 import { connectionFor } from "./connection";
 import { chunkArray } from "./utils";
 
-// crkdpVWjHWdggGgBuSyAqSmZUmAjYLzD435tcLDRLXr
+// ETkrpM1XPWhM4qb1KN4gYdzQNbFWDvgAMtDVwAGkqEvQ
 const wallet = Keypair.fromSecretKey(
   utils.bytes.bs58.decode(process.env.CRANK_SOLANA_KEY || "")
 );

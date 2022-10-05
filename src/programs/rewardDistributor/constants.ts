@@ -7,7 +7,7 @@ export const REWARD_DISTRIBUTOR_ADDRESS = new PublicKey(
   "9h3kHWEExHGyUyEtDhSgRufYqM3BdG4THKcKCny4jZuc"
 );
 export const REWARD_MANAGER = new PublicKey(
-  "crkdpVWjHWdggGgBuSyAqSmZUmAjYLzD435tcLDRLXr"
+  "ETkrpM1XPWhM4qb1KN4gYdzQNbFWDvgAMtDVwAGkqEvQ"
 );
 
 export const REWARD_ENTRY_SEED = "reward-entry";
