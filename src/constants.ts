@@ -5,5 +5,5 @@ export const COLLECTOR = new PublicKey(
 );
 
 export const TOKEN_MANAGER_ADDRESS = new PublicKey(
-  "9WDgSgB9S54ui97UfY2shegJ764ScgwjDRLEhqLYS3e"
+  "39xubSermwXqcSPu2qEHSspGVmsVZYBnA8RbFqhMLbFK"
 );
