@@ -41,10 +41,10 @@
     tiny-invariant "^1.2.0"
     tslib "^2.3.1"
 
-"@cardinal/token-manager@npm:@nazaire/cardinal-token-manager@^1.6.0":
-  version "1.6.0"
-  resolved "https://npm.pkg.github.com/download/@nazaire/cardinal-token-manager/1.6.0/fd5efbb4593cd821804c8f15567486f8780878e6#fd5efbb4593cd821804c8f15567486f8780878e6"
-  integrity sha512-7zzsSnYfvDWWu1Du9l/pCXdUcFZK9i744Du+cOO4OLg71SVmEkCxsbiwbA7tNK+ZUeRekvM0UFNmGm6YmZAGig==
+"@cardinal/token-manager@npm:@nazaire/cardinal-token-manager@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.npmjs.org/@nazaire/cardinal-token-manager/-/cardinal-token-manager-1.6.1.tgz#4fb2d9fea11270968e5cf70362e800d1e838b508"
+  integrity sha512-uDJfzu+KriwpoP02e+uCYCTiFd6MiERGNhiPI31DXeKZeF+Mr4+4keUHGMZTDukJSk95ml7r2pWrUH8MnnnleA==
   dependencies:
     "@cardinal/common" "^2.0.12"
     "@metaplex-foundation/mpl-token-metadata" "^1.2.5"
