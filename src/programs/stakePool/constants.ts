@@ -7,6 +7,10 @@ export const STAKE_POOL_ADDRESS = new PublicKey(
   "CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe"
 );
 
+export const COLLECTOR = new PublicKey(
+  "ETkrpM1XPWhM4qb1KN4gYdzQNbFWDvgAMtDVwAGkqEvQ"
+);
+
 export const STAKE_POOL_SEED = "stake-pool";
 
 export const STAKE_ENTRY_SEED = "stake-entry";

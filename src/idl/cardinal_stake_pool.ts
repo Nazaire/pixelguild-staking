@@ -276,7 +276,17 @@ export type CardinalStakePool = {
           isSigner: false;
         },
         {
+          name: "collector";
+          isMut: true;
+          isSigner: false;
+        },
+        {
           name: "tokenProgram";
+          isMut: false;
+          isSigner: false;
+        },
+        {
+          name: "systemProgram";
           isMut: false;
           isSigner: false;
         }
@@ -1324,7 +1334,17 @@ export const IDL: CardinalStakePool = {
           isSigner: false,
         },
         {
+          name: "collector",
+          isMut: true,
+          isSigner: false,
+        },
+        {
           name: "tokenProgram",
+          isMut: false,
+          isSigner: false,
+        },
+        {
+          name: "systemProgram",
           isMut: false,
           isSigner: false,
         },

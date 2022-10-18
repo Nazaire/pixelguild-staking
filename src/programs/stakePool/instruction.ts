@@ -1,6 +1,5 @@
 import { findAta } from "@cardinal/common";
 import {
-  CRANK_KEY,
   getRemainingAccountsForKind,
   TokenManagerKind,
   TokenManagerState,
@@ -25,7 +24,7 @@ import type {
 } from "@solana/web3.js";
 import { SystemProgram, SYSVAR_RENT_PUBKEY } from "@solana/web3.js";
 
-import { TOKEN_MANAGER_ADDRESS } from "../../constants";
+import { COLLECTOR, TOKEN_MANAGER_ADDRESS } from "../../constants";
 import type { STAKE_POOL_PROGRAM } from ".";
 import { STAKE_POOL_ADDRESS, STAKE_POOL_IDL } from ".";
 import { ReceiptType } from "./constants";
@@ -330,7 +329,9 @@ export const stake = (
       originalMint: params.originalMint,
       user: wallet.publicKey,
       userOriginalMintTokenAccount: params.userOriginalMintTokenAccountId,
+      collector: COLLECTOR,
       tokenProgram: TOKEN_PROGRAM_ID,
+      systemProgram: SystemProgram.programId,
     },
   });
 };
@@ -482,7 +483,7 @@ export const returnReceiptMint = async (
       tokenManagerTokenAccount: tokenManagerTokenAccountId,
       userReceiptMintTokenAccount: userReceiptMintTokenAccount,
       user: wallet.publicKey,
-      collector: CRANK_KEY,
+      collector: COLLECTOR,
       tokenProgram: TOKEN_PROGRAM_ID,
       tokenManagerProgram: TOKEN_MANAGER_ADDRESS,
       rent: SYSVAR_RENT_PUBKEY,

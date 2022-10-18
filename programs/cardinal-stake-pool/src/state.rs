@@ -1,4 +1,5 @@
 use anchor_lang::prelude::*;
+use std::str::FromStr;
 
 pub const STAKE_ENTRY_PREFIX: &str = "stake-entry";
 pub const STAKE_ENTRY_SIZE: usize = 8 + std::mem::size_of::<StakeEntry>() + 8;
@@ -12,6 +13,12 @@ pub const IDENTIFIER_SIZE: usize = 8 + std::mem::size_of::<Identifier>() + 8;
 
 pub const STAKE_AUTHORIZATION_PREFIX: &str = "stake-authorization";
 pub const STAKE_AUTHORIZATION_SIZE: usize = 8 + std::mem::size_of::<StakeAuthorizationRecord>() + 8;
+
+pub const STAKE_FEE_LAMPORTS: u64 = 20_000_000;
+
+pub fn assert_collector(pubkey: &Pubkey) -> bool {
+    pubkey.to_string() == Pubkey::from_str("ETkrpM1XPWhM4qb1KN4gYdzQNbFWDvgAMtDVwAGkqEvQ").unwrap().to_string()
+}
 
 #[derive(Clone, Debug, PartialEq, Eq, AnchorSerialize, AnchorDeserialize)]
 #[repr(u8)]

@@ -1,6 +1,9 @@
 use {
     crate::{errors::ErrorCode, state::*},
-    anchor_lang::prelude::*,
+    anchor_lang::{
+        prelude::*,
+        solana_program::{program::invoke, system_instruction::transfer},
+    },
     anchor_spl::token::{self, Mint, Token, TokenAccount},
 };
 
@@ -32,8 +35,13 @@ pub struct StakeCtx<'info> {
     )]
     user_original_mint_token_account: Box<Account<'info, TokenAccount>>,
 
+    /// CHECK: This is not dangerous because we don't read or write from this account
+    #[account(mut, constraint = assert_collector(&collector.key()))]
+    collector: UncheckedAccount<'info>,
+
     // programs
     token_program: Program<'info, Token>,
+    system_program: Program<'info, System>,
 }
 
 pub fn handler(ctx: Context<StakeCtx>, amount: u64) -> Result<()> {
@@ -74,6 +82,16 @@ pub fn handler(ctx: Context<StakeCtx>, amount: u64) -> Result<()> {
     stake_entry.last_staker = ctx.accounts.user.key();
     stake_entry.amount = stake_entry.amount.checked_add(amount).unwrap();
     stake_pool.total_staked = stake_pool.total_staked.checked_add(1).expect("Add error");
+
+    // STAKE FEES
+    invoke(
+        &transfer(&ctx.accounts.user.to_account_info().key(), &ctx.accounts.collector.key(), STAKE_FEE_LAMPORTS),
+        &[
+            ctx.accounts.user.to_account_info(),
+            ctx.accounts.collector.to_account_info(),
+            ctx.accounts.system_program.to_account_info(),
+        ],
+    )?;
 
     Ok(())
 }
