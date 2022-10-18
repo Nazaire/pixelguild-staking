@@ -1,6 +1,6 @@
 {
   "name": "@nazaire/pixelguild-staking",
-  "version": "1.10.3",
+  "version": "1.10.4",
   "description": "Cardinal stake pool SDK",
   "keywords": [
     "solana",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@cardinal/common": "^2.0.11",
-    "@cardinal/token-manager": "npm:@nazaire/cardinal-token-manager@^1.6.1",
+    "@cardinal/token-manager": "npm:@nazaire/cardinal-token-manager@^1.6.2",
     "@metaplex-foundation/mpl-token-metadata": "^1.2.5",
     "node-fetch": "2"
   },
