@@ -15,16 +15,16 @@ wallet = "./local/keys/authority_8EAcZrXUaJZoByMHBC3Kh913hizxJAJkjX3NsLx1g9Ft.js
 
 [programs.mainnet]
 cardinal_stake_pool = "CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe"
-cardinal_reward_distributor = "9h3kHWEExHGyUyEtDhSgRufYqM3BdG4THKcKCny4jZuc"
+cardinal_reward_distributor = "ALUFRuJCRacDhtKiMNJ43GtQ1q7Q9U8FKDJdp4VMyTwU"
 
 [programs.devnet]
 cardinal_stake_pool = "CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe"
-cardinal_reward_distributor = "9h3kHWEExHGyUyEtDhSgRufYqM3BdG4THKcKCny4jZuc"
+cardinal_reward_distributor = "ALUFRuJCRacDhtKiMNJ43GtQ1q7Q9U8FKDJdp4VMyTwU"
 
 [programs.testnet]
 cardinal_stake_pool = "CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe"
-cardinal_reward_distributor = "9h3kHWEExHGyUyEtDhSgRufYqM3BdG4THKcKCny4jZuc"
+cardinal_reward_distributor = "ALUFRuJCRacDhtKiMNJ43GtQ1q7Q9U8FKDJdp4VMyTwU"
 
 [programs.localnet]
 cardinal_stake_pool = "CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe"
-cardinal_reward_distributor = "9h3kHWEExHGyUyEtDhSgRufYqM3BdG4THKcKCny4jZuc"
+cardinal_reward_distributor = "ALUFRuJCRacDhtKiMNJ43GtQ1q7Q9U8FKDJdp4VMyTwU"

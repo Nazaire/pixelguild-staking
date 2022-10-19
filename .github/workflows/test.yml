@@ -117,7 +117,7 @@ jobs:
         run: mkdir -p target/deploy
       - run: cp -r tests/test-keypairs/* target/deploy
       - run: find . -type f -name "*" -exec sed -i'' -e "s/CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe/$(solana-keygen pubkey tests/test-keypairs/cardinal_stake_pool-keypair.json)/g" {} +
-      - run: find . -type f -name "*" -exec sed -i'' -e "s/9h3kHWEExHGyUyEtDhSgRufYqM3BdG4THKcKCny4jZuc/$(solana-keygen pubkey tests/test-keypairs/cardinal_reward_distributor-keypair.json)/g" {} +
+      - run: find . -type f -name "*" -exec sed -i'' -e "s/ALUFRuJCRacDhtKiMNJ43GtQ1q7Q9U8FKDJdp4VMyTwU/$(solana-keygen pubkey tests/test-keypairs/cardinal_reward_distributor-keypair.json)/g" {} +
       - run: find . -type f -name "Anchor.toml" -exec sed -i'' -e "s/yarn mocha tests\/\*.spec.ts/yarn mocha tests\/\*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=.\/tests\/out.xml/g" {} +
 
       - name: Run tests

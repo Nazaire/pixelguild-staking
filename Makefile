@@ -9,7 +9,7 @@ install:
 
 test-keys:
 	LC_ALL=C find programs src -type f -exec sed -i '' -e "s/CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe/$$(solana-keygen pubkey ./target/deploy/cardinal_stake_pool-keypair.json)/g" {} +
-	LC_ALL=C find programs src -type f -exec sed -i '' -e "s/9h3kHWEExHGyUyEtDhSgRufYqM3BdG4THKcKCny4jZuc/$$(solana-keygen pubkey ./target/deploy/cardinal_reward_distributor-keypair.json)/g" {} +
+	LC_ALL=C find programs src -type f -exec sed -i '' -e "s/ALUFRuJCRacDhtKiMNJ43GtQ1q7Q9U8FKDJdp4VMyTwU/$$(solana-keygen pubkey ./target/deploy/cardinal_reward_distributor-keypair.json)/g" {} +
 
 build:
 	anchor build
@@ -31,7 +31,7 @@ test:
 
 clean-test-keys:
 	LC_ALL=C find programs src -type f -exec sed -i '' -e "s/$$(solana-keygen pubkey ./target/deploy/cardinal_stake_pool-keypair.json)/CYUGdQhsWCKXTWgbyuybhRfPTshxneywND8KnHeMfwQe/g" {} +
-	LC_ALL=C find programs src -type f -exec sed -i '' -e "s/$$(solana-keygen pubkey ./target/deploy/cardinal_reward_distributor-keypair.json)/9h3kHWEExHGyUyEtDhSgRufYqM3BdG4THKcKCny4jZuc/g" {} +
+	LC_ALL=C find programs src -type f -exec sed -i '' -e "s/$$(solana-keygen pubkey ./target/deploy/cardinal_reward_distributor-keypair.json)/ALUFRuJCRacDhtKiMNJ43GtQ1q7Q9U8FKDJdp4VMyTwU/g" {} +
 
 stop:
 	pkill solana-test-validator
